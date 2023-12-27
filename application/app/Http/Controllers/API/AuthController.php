@@ -92,8 +92,8 @@ class AuthController extends Controller
                 'grant_type' => 'password',
                 'username' => $credentials['email'],
                 'password' => $credentials['password'],
-                'client_id' => 2,
-                'client_secret' => 'tEBcBV0e0M6vrnIHVHXGk1hgItHmfNKXEPiTRkh5',
+                'client_id' => env('OAUTH_CLIENT_ID'),
+                'client_secret' => env('OAUTH_CLIENT_SECRET'),
                 'scope' => '*',
             ]);
 
