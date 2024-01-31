@@ -3,7 +3,7 @@ FROM mysql:8.0.24
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN set -xe \
-    && apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 467B942D3A79BD29 \
+    && apt-key adv --keyserver keyserver.ubuntu.com --recv-keys b7b3b788a8d3785c \
     && apt-get update \
     && apt-get install -y locales \
     && rm -rf /var/lib/apt/lists/* \

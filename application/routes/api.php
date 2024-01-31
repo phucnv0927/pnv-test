@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\AuthController;
+use App\Http\Controllers\API\GoogleSheetsController;
 use App\Http\Controllers\API\UsersController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -36,4 +37,6 @@ Route::group(['middleware' => ['cors', 'auth:api', 'json.response']], function (
     ], function () {
         Route::get('/users', [UsersController::class, 'index'])->name('index');
     });
+
+    Route::get('/google-sheets', [GoogleSheetsController::class, 'getData'])->withoutMiddleware('auth:api');
 });
